@@ -11,7 +11,21 @@
  *
 **/
 
+function countTheHoles(someInteger){
+  var totalHoles = 0
+  var oneHole = 1
+  var twoHoles = 2
+  var numberToDigits = []
+  sSomeInteger = someInteger.string()
 
+  console.log(sSomeInteger)
+
+  // for (var i = 0; i < sSomeInteger.length; i++) {
+  //   numberToDigits.push(SomeInteger[i])
+  //   console.log(numberToDigits)
+  // }
+  return totalHoles
+}
 
 
 var countTheHoles = function(){}

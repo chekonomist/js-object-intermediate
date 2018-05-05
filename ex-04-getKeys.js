@@ -10,7 +10,15 @@
  *
 */
 
+function getKeys(someObject){
+	var onlyPropertyNames = []
 
+	for (var theProperty in someObject) {
+		onlyPropertyNames.push(theProperty)
+	}
+	console.log(onlyPropertyNames)
+	return onlyPropertyNames
+}
 
 
 

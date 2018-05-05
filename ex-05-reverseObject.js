@@ -4,34 +4,60 @@
  * Write a function called reverseObject(). It should take as input an object,
  * and it should output a new object where the keys and values are reversed.
  *
+ * reverseObject({ shoe: 'Nike', type: 'soccer' })
+ *  => {
+ *   Nike: 'shoe',
+ *   soccer: 'type'
+ * }
+ *
 **/
 
+function reverseObject(orderedObject){
+	var upsideDownWorld = {}
 
+	for (var p in orderedObject) {
+		upsideDownWorld[orderedObject[p]] = p
+	}
 
-
-
+	console.log(upsideDownWorld)
+	return upsideDownWorld
+}
 
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
+
 var object1 = {
 	 occupants: 4,
-	 apartment_no: "2b",
+	 apartmentNo: "2b",
 	 structuralIntegrity: "failing",
-	 squareFeet: 700
+	 name: 'Oakridge'
 }
 
 var object2 = {
 	name: "Abby",
 	gender: "female",
 	description: "dog",
-	paws: 4
 }
 
-var reversedObj_1 = reverseObject(object1)
-var reversedObj_2 = reverseObject(object2)
+var object3 = {
+	make: "Ford",
+	model: "Model-T",
+	year: "1921",
+	license: 'N89LP2'
+}
 
-console.assert( reversedObj_1['2b'] === 'apartment_no' )
-console.assert( reversedObj_1.failing === 'structuralIntegrity' )
+var reversedObj1 = reverseObject(object1)
+var reversedObj2 = reverseObject(object2)
+var reversedObj3 = reverseObject(object3)
+
+console.assert( reversedObj1.Oakridge === 'name' )
+console.assert( reversedObj1['2b'] === 'apartmentNo' )
+console.assert( reversedObj1.failing === 'structuralIntegrity' )
 //-----------------------------
-console.assert( reversedObj_2.dog === 'description')
-console.assert( reversedObj_2.female === 'gender')
+console.assert( reversedObj2.dog === 'description')
+console.assert( reversedObj2.female === 'gender')
+console.assert( reversedObj2.Abby === 'name')
+//-----------------------------
+console.assert( reversedObj3.Ford === 'make')
+console.assert( reversedObj3['N89LP2'] === 'license')
+console.assert( reversedObj3['1921'] === 'year')
