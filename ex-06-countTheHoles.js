@@ -13,22 +13,23 @@
 
 function countTheHoles(someInteger){
   var totalHoles = 0
-  var oneHole = 1
-  var twoHoles = 2
-  var numberToDigits = []
-  sSomeInteger = someInteger.string()
+  var numberToString = someInteger.toString()
 
-  console.log(sSomeInteger)
+  for (var i = 0; i < numberToString.length; i++) {
+    if( numberToString[i] === "0" || numberToString[i] === "4" || numberToString[i] === "6" || numberToString[i] === "9" ){
+      totalHoles = totalHoles + 1
+    }
 
-  // for (var i = 0; i < sSomeInteger.length; i++) {
-  //   numberToDigits.push(SomeInteger[i])
-  //   console.log(numberToDigits)
-  // }
+    if ( numberToString[i] === "8" ) {
+      totalHoles = totalHoles + 2
+    }
+  }
+
+  console.log(totalHoles)
   return totalHoles
 }
 
 
-var countTheHoles = function(){}
 
 
 //~+~+~+~+~+~+~+~Don't Touch~+~+~++~+~+~+~+~+~+~+
